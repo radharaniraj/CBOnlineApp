@@ -10,6 +10,8 @@ apply plugin: 'com.google.gms.google-services'
 apply plugin: 'io.fabric'
 
 def YOUTUBE_KEY = System.getenv('YOUTUBE_KEY') ?: "AIzaSyAqdhonCxTsQ5oQ-tyNaSgDJWjEM7UaEt4"
+def TALKJS_KEY = System.getenv('TALKJS_KEY') ?: "AIzaSyAqdhonCxTsQ5oQ-tyNaSgDJWjEM7UaEt4"
+
 
 android {
     compileSdkVersion 28
@@ -36,6 +38,7 @@ android {
             versionNameSuffix '-debug-version'
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             buildConfigField "String", "YOUTUBE_KEY", '"' + YOUTUBE_KEY + '"'
+            buildConfigField "String", "TALKJS_KEY", '"' + TALKJS_KEY + '"'
             applicationIdSuffix = 'debug'
 
         }
@@ -43,6 +46,7 @@ android {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             buildConfigField "String", "YOUTUBE_KEY", '"' + YOUTUBE_KEY + '"'
+            buildConfigField "String", "TALKJS_KEY", '"' + TALKJS_KEY + '"'
 
         }
     }
